@@ -29,6 +29,11 @@ jobs:
       - run: npm config set -- '//registry.npmjs.org/:_authToken=${npm_key}'
       - run: git config user.email "circleci@gorhumanslab.com"
       - run: git config user.name "Circle CI builder"
+      - run: eval $(ssh-agent -s)
+      - run: echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+      - run: mkdir -p ~/.ssh
+      - run: chmod 700 ~/.ssh
+      - run: '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
       - run: npm version patch --no-git-tag-version
       - run: git add .
       - run: git commit -m "version increase"
@@ -46,4 +51,4 @@ workflows:
           requires:
             - build
           context:
-            main
+            log-scope-context
