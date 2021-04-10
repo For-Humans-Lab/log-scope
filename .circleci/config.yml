@@ -28,8 +28,6 @@ jobs:
           at: .
       - run: npm config set -- '//registry.npmjs.org/:_authToken=${npm_key}'
       - run: npm version patch --no-git-tag-version
-      - run: git commit -m "Version increase"
-      - run: git push
       - run: npm publish --access public
         
 workflows:
