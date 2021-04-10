@@ -1,0 +1,29 @@
+{
+  "name": "@for-humans-lab/log-scope",
+  "version": "1.0.0",
+  "description": "The next gen logging library",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "test": "jest",
+    "build": "tsc src/** --declaration --outDir dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/For-Humans-Lab/log-scope.git"
+  },
+  "keywords": [
+    "logging",
+    "RN",
+    "react-native"
+  ],
+  "author": "For Humans Lab",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/For-Humans-Lab/log-scope/issues"
+  },
+  "homepage": "https://github.com/For-Humans-Lab/log-scope#readme",
+  "devDependencies": {
+    "typescript": "^4.2.4"
+  }
+}
