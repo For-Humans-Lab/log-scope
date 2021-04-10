@@ -27,7 +27,6 @@ jobs:
       - attach_workspace:
           at: .
       - run: npm config set -- '//registry.npmjs.org/:_authToken=${npm_key}'
-      - run: npm version patch --no-git-tag-version
       - run: npm publish --access public
         
 workflows:
@@ -41,4 +40,4 @@ workflows:
           requires:
             - build
           context:
-            main
+            log-scope-context
